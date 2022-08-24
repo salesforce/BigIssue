@@ -26,7 +26,19 @@ The synthetic data is already split into train, validation, and test splits.
 
 #### Realistic
 
-Realistic data consists of issue information for all of the issues we've collected as described in the paper. We provide the `fixed.tar.gz` and `unfixed.tar.gz` states of the repository, as well as the `diff` containing the changed diff and `issue.jsonl` with information about the issue.
+Realistic data consists of issue information for all of the issues we've collected as described in the paper. The directory structure is as follows:
+
+* `realistic`
+  * `single_file`
+    * `<repository_user>-<repository_name>`
+      * `<issue number>`
+        * `fixed.tar.gz` - fixed version of the repository
+        * `unfixed.tar.gz` - unfixed version of the repository
+        * `diff` - diff between unfixed and fixed version
+        * `issue.jsonl` - issue metadata
+  * `multi_file` (similar directory structure)
+
+We provide the `fixed.tar.gz` and `unfixed.tar.gz` states of the repository, as well as the `diff` containing the changed diff and `issue.jsonl` with information about the issue.
 
 ### Training Code & Checkpoints
 
